@@ -12,6 +12,9 @@ export const studentApi=createApi({
             }),
             providesTags: ["students"]
         }),
+        getStudentDetails: builder.query({
+            query: (id) => `/${id}`,
+        }),
         createStudent: builder.mutation({
             query(body) {
                 return {
@@ -35,4 +38,9 @@ export const studentApi=createApi({
     }),
 })
 
-export const { useCreateStudentMutation, useGetStudentsQuery, useDeleteStudentMutation }=studentApi
+export const {
+    useCreateStudentMutation,
+    useGetStudentsQuery,
+    useDeleteStudentMutation,
+    useLazyGetStudentDetailsQuery, useGetStudentDetailsQuery
+}=studentApi

@@ -8,7 +8,7 @@ export default function Home() {
       <div className="flex items-center justify-between  px-2">
         <h1 className="font-bold text-2xl text-[#2b2b2b]">Students</h1>
         <Button asChild >
-          <Link className="space-x-3" href="/newstudent">
+          <Link className="space-x-3" href="/student/newstudent">
             <p>Add Student</p>
             <IoIosAddCircle className="text-2xl" />
           </Link>

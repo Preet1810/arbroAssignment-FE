@@ -80,8 +80,8 @@ const NewStudent=() => {
             <h1 className='text-4xl font-bold '>New Student Form</h1>
             <form className='space-y-3 overflow-y-auto' onSubmit={formik.handleSubmit}>
                 <h2 className='text-2xl font-bold '>Personal Details</h2>
-                <div className='flex gap-x-10'>
-                    <div className='flex flex-col gap-y-1 w-full'>
+                <div className='flex md:flex-row flex-col gap-x-10 gap-y-3'>
+                    <div className='flex flex-col gap-y-1 w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="name">Full Name</Label>
                         <Input
                             id="name"
@@ -98,7 +98,7 @@ const NewStudent=() => {
                             </div>
                         )}
                     </div>
-                    <div className='flex flex-col gap-y-1 w-full'>
+                    <div className='flex flex-col gap-y-1 w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="email">Email</Label>
                         <Input
                             id="email"
@@ -116,8 +116,8 @@ const NewStudent=() => {
                         )}
                     </div>
                 </div>
-                <div className='flex gap-x-10'>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                <div className='flex md:flex-row flex-col gap-y-3 gap-x-10'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="fatherName">Father Name</Label>
                         <Input
                             id="fatherName"
@@ -134,7 +134,7 @@ const NewStudent=() => {
                             </div>
                         )}
                     </div>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="motherName">Mother Name</Label>
                         <Input
                             id="motherName"
@@ -153,8 +153,8 @@ const NewStudent=() => {
                     </div>
                 </div>
                 <h2 className='text-2xl font-bold '>Address Details</h2>
-                <div className='flex gap-x-10'>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                <div className='flex md:flex-row flex-col gap-y-3 gap-x-10'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="addressLine1">Address Line 1</Label>
                         <Input
                             id="addressLine1"
@@ -171,7 +171,7 @@ const NewStudent=() => {
                             </div>
                         )}
                     </div>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="city">City</Label>
                         <Input
                             id="city"
@@ -189,8 +189,8 @@ const NewStudent=() => {
                         )}
                     </div>
                 </div>
-                <div className='flex gap-x-10'>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                <div className='flex md:flex-row flex-col gap-y-3 gap-x-10'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="state">State</Label>
                         <Input
                             id="state"
@@ -207,7 +207,7 @@ const NewStudent=() => {
                             </div>
                         )}
                     </div>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="pincode">Pincode</Label>
                         <Input
                             id="pincode"
@@ -226,8 +226,8 @@ const NewStudent=() => {
                     </div>
                 </div>
                 <h2 className='text-2xl font-bold '>Add Family Members</h2>
-                <div className='flex gap-x-10 items-center'>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                <div className='flex md:flex-row flex-col gap-y-3 gap-x-10 items-center'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="memberName">Member Name</Label>
                         <Input
                             id="memberName"
@@ -238,7 +238,7 @@ const NewStudent=() => {
                             placeholder="familyMemberName"
                         />
                     </div>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="relationship">Relationship</Label>
                         <Input
                             id="relationship"
@@ -251,11 +251,12 @@ const NewStudent=() => {
                     </div>
                 </div>
                 <Button
+                    className="ml-3"
                     onClick={() => handleAdd("familyMembers", { "name": familyMemberName, "relationship": relation })}
                     type="button">
                     Add Member
                 </Button>
-                <div className='flex flex-wrap gap-x-6 gap-y-3'>
+                <div className='flex flex-wrap gap-x-6 gap-y-3 ml-3'>
                     {formik.values.familyMembers.map((member, index) => (
                         <div
                             onClick={() => handleDelete("familyMembers", index)}
@@ -271,8 +272,8 @@ const NewStudent=() => {
                     ))}
                 </div>
                 <h2 className='text-2xl font-bold '>Add Certifications</h2>
-                <div className='flex gap-x-10 items-center'>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                <div className='flex md:flex-row flex-col gap-y-3 gap-x-10 items-center'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="title">Certificate Title</Label>
                         <Input
                             id="title"
@@ -283,7 +284,7 @@ const NewStudent=() => {
                             placeholder="Certificate Title"
                         />
                     </div>
-                    <div className='flex flex-col gap-y-1  w-full'>
+                    <div className='flex flex-col gap-y-1  w-full px-3'>
                         <Label className="text-lg font-semibold" htmlFor="institution">Institution Name</Label>
                         <Input
                             id="institution"
@@ -296,11 +297,12 @@ const NewStudent=() => {
                     </div>
                 </div>
                 <Button
+                    className="ml-3"
                     onClick={() => handleAdd("certifications", { "title": certificateTitle, "institution": certificateInstitution })}
                     type="button">
                     Add Certificate
                 </Button>
-                <div className='flex flex-wrap gap-x-6 gap-y-3'>
+                <div className='flex flex-wrap gap-x-6 gap-y-3 ml-3'>
                     {formik.values.certifications.map((certification, index) => (
                         <div
                             onClick={() => handleDelete("certifications", index)}
